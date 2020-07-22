@@ -4,7 +4,7 @@ apply plugin: 'kotlin'
 // JitPack Maven
 apply plugin: 'com.github.dcendents.android-maven'
 // Group
-group='com.github.codeestX'
+group='com.github.hyuni'
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
