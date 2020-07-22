@@ -18,7 +18,7 @@ package moe.codeest.rxsocketclient.post
 
 import moe.codeest.rxsocketclient.SocketClient
 import java.util.concurrent.Executor
-
+import java.util.logging.Logger
 
 /**
  * @author: Est <codeest.dev@gmail.com>
@@ -43,10 +43,11 @@ class AsyncPoster(private val mSocketClient: SocketClient, private val mExecutor
                 write(pendingPost.data)
                 flush()
             } catch (e: Exception) {
+                Logger.getGlobal().info("AsyncPoster exception ${e.localizedMessage}")
                 mSocketClient.disconnect()
+            } finally {
+                PendingPost.releasePendingPost(pendingPost)
             }
-            PendingPost.releasePendingPost(pendingPost)
         }
     }
-
 }
