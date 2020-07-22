@@ -5,6 +5,7 @@ apply plugin: 'kotlin'
 apply plugin: 'com.github.dcendents.android-maven'
 // Group
 group='com.github.hyuni'
+version = '1.0.1'
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
